@@ -36,6 +36,10 @@ body {
   @apply container text-dark px-4 m-auto sm:mt-5;
 }
 
+main {
+  @apply w-[90%] m-auto;
+}
+
 h1,
 h2,
 h3,
@@ -56,11 +60,12 @@ header img {
 
 /* Hero Section */
 section.hero {
-  @apply text-center w-[90%] m-auto lg:mt-4;
+  @apply text-center lg:mt-4;
 }
 
 section.hero .content {
-  @apply flex flex-col justify-center gap-6 m-auto my-16 sm:px-4 sm:my-22 md:gap-8 lg:my-26;
+  @apply flex flex-col justify-center gap-6 m-auto my-16 
+         sm:px-4 sm:my-22 md:gap-8 lg:my-26;
 }
 
 section.hero h1 {
@@ -73,4 +78,25 @@ section.hero p {
 
 section.hero img {
   @apply w-[90%] max-w-xs m-auto md:max-w-md lg:max-w-2xl;
+}
+
+section.achievements {
+  @apply flex flex-col justify-center items-center flex-wrap gap-20 
+         text-sm text-center w-[90%] m-auto my-30 sm:flex-row sm:justify-evenly lg:my-34;
+}
+
+section.achievements .achievement {
+  @apply flex flex-col gap-3 lg:gap-4;
+}
+
+section.achievements .icon {
+  @apply w-6 lg:w-8;
+}
+
+section.achievements .title {
+  @apply block text-5xl lg:text-6xl;
+}
+
+section.achievements .label {
+  @apply opacity-70;
 }
