@@ -80,6 +80,7 @@ section.hero img {
   @apply w-[90%] max-w-xl mx-auto md:max-w-2xl;
 }
 
+/* Achievements Section */
 section.achievements {
   @apply flex flex-col justify-center items-center flex-wrap gap-30 
          text-sm text-center w-[90%] mx-auto my-30 
@@ -102,6 +103,7 @@ section.achievements .label {
   @apply opacity-70;
 }
 
+/* Features Section */
 section.features {
   @apply text-center w-full p-0 mt-50 lg:text-left;
 }
@@ -139,7 +141,7 @@ section.features .feature.reverse:nth-child(3)::before {
 }
 
 section.features .feature.reverse:nth-child(3)::after {
-  background: url("/assets/bg-section-bottom-desktop-2.svg") no-repeat;
+  background: url("/assets/bg-section-bottom-mobile-2.svg") no-repeat;
   background-size: 100% 101px;
 
   @apply top-full h-[101px];
@@ -198,4 +200,13 @@ section.features .feature h2 {
 
 section.features .feature p {
   @apply max-w-xl mt-6 md:text-xl lg:text-2xl lg:mt-10;
+}
+
+/* Get Start Section */
+section.get-started {
+  @apply text-center pt-20 pb-40 lg:pt-40;
+}
+
+section.get-started h2 {
+  @apply text-2xl mb-6 md:text-3xl lg:text-4xl lg:mb-8;
 }
