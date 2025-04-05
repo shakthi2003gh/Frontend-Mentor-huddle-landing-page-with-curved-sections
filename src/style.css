@@ -11,18 +11,21 @@
 
 @layer utilities {
   button {
-    @apply text-lg text-nowrap border-1 rounded-full cursor-pointer sm:text-base lg:text-xl;
+    @apply text-lg text-nowrap rounded-full cursor-pointer sm:text-base lg:text-xl;
   }
 
   .btn--primary {
     @apply w-min px-10 py-2 mx-auto mt-4 text-light
-    bg-primary-500 -outline-offset-5 hover:bg-primary-300
-    focus-visible:outline-light focus-visible:outline-2;
+    bg-primary-500 -outline-offset-4 hover:bg-primary-300
+    focus-visible:outline-light focus-visible:outline-2
+    active:bg-primary-300 hover:active:bg-primary-500;
   }
 
   .btn--outline {
-    @apply text-sm px-6 py-1.5 text-primary-500 outline-0 hover:text-primary-300 focus-visible:bg-primary-500
-     focus-visible:text-light lg:text-lg;
+    @apply text-sm px-6 py-1.5 border-1 text-primary-500 outline-0
+    hover:text-primary-300 focus-visible:bg-primary-500
+    focus-visible:text-light lg:text-lg
+    active:text-primary-300 hover:active:text-primary-500;
   }
 }
 
@@ -123,7 +126,7 @@ section.features .feature.reverse:nth-child(1)::before {
   background: url("/assets/bg-section-top-mobile-1.svg") no-repeat;
   background-size: 100% 112px;
 
-  @apply -top-[112px] h-[112px];
+  @apply -top-[111px] h-[112px];
 }
 
 section.features .feature.reverse:nth-child(1)::after {
@@ -137,7 +140,7 @@ section.features .feature.reverse:nth-child(3)::before {
   background: url("/assets/bg-section-top-mobile-2.svg") no-repeat;
   background-size: 100% 103px;
 
-  @apply -top-[103px] h-[103px];
+  @apply -top-[102px] h-[103px];
 }
 
 section.features .feature.reverse:nth-child(3)::after {
@@ -147,12 +150,12 @@ section.features .feature.reverse:nth-child(3)::after {
   @apply top-full h-[101px];
 }
 
-@media (width >= 48rem) {
+@media (width >= 64rem) {
   section.features .feature.reverse:nth-child(1)::before {
     background: url("/assets/bg-section-top-desktop-1.svg") no-repeat;
     background-size: 100% 165px;
 
-    @apply -top-[165px] h-[165px];
+    @apply -top-[164px] h-[165px];
   }
 
   section.features .feature.reverse:nth-child(1)::after {
@@ -166,7 +169,7 @@ section.features .feature.reverse:nth-child(3)::after {
     background: url("/assets/bg-section-top-desktop-2.svg") no-repeat;
     background-size: 100% 156px;
 
-    @apply -top-[156px] h-[156px];
+    @apply -top-[155px] h-[156px];
   }
 
   section.features .feature.reverse:nth-child(3)::after {
@@ -178,7 +181,7 @@ section.features .feature.reverse:nth-child(3)::after {
 }
 
 section.features .feature .container {
-  @apply flex flex-col justify-center items-center gap-20 container w-[90%] px-4 py-15 my-30 mx-auto
+  @apply flex flex-col justify-center items-center gap-20 w-[90%] px-4 py-15 my-30 mx-auto
          md:gap-30 lg:flex-row lg:gap-40 lg:py-25;
 }
 
@@ -209,4 +212,117 @@ section.get-started {
 
 section.get-started h2 {
   @apply text-2xl mb-6 md:text-3xl lg:text-4xl lg:mb-8;
+}
+
+/* Footer */
+footer {
+  @apply relative p-8 mt-[53px] text-light bg-dark md:mt-[158px];
+}
+
+footer::before {
+  content: "";
+  background: url("/assets/bg-footer-top-mobile.svg") no-repeat;
+  background-size: 100% 53px;
+
+  @apply absolute left-0 -top-[52px] w-full h-[53px];
+}
+
+@media (width >= 64rem) {
+  footer::before {
+    background: url("/assets/bg-footer-top-mobile.svg") no-repeat;
+    background-size: 100% 158px;
+
+    @apply -top-[157px] h-[158px];
+  }
+}
+
+footer .container {
+  @apply flex flex-col justify-between gap-x-4 gap-y-30 mx-auto my-10 
+   md:flex-row md:my-5 lg:w-[90%];
+}
+
+footer p {
+  @apply text-sm max-w-95 lg:text-base;
+}
+
+footer .info,
+footer .news-letter {
+  @apply flex flex-col gap-8;
+}
+
+footer .info {
+  @apply md:-order-1;
+}
+
+footer .info .Logo {
+  @apply w-48 lg:w-56;
+}
+
+footer .contact {
+  @apply grid gap-4;
+}
+
+footer .contact .contact-item {
+  @apply flex items-center gap-4;
+}
+
+footer .social-plugins {
+  @apply flex gap-4 mt-6;
+}
+
+footer .social-plugins a {
+  @apply flex size-9 text-light transition-colors md:size-10;
+}
+
+footer .social-plugins .facebook {
+  @apply hover:text-[#1877F2];
+}
+
+footer .social-plugins .instagram {
+  @apply p-1 hover:text-[#E1306C];
+}
+
+footer .social-plugins .twitter {
+  @apply hover:text-[#03A9F4];
+}
+
+footer .social-plugins svg {
+  @apply size-full;
+}
+
+footer .news-letter h2 {
+  @apply text-2xl uppercase lg:text-3xl;
+}
+
+footer .news-letter .form {
+  @apply flex flex-wrap justify-end gap-3 max-w-85 lg:flex-nowrap
+  lg:gap-6 lg:w-100 lg:max-w-none xl:w-120;
+}
+
+footer .news-letter.error .form {
+  @apply gap-y-6;
+}
+
+footer .news-letter .input {
+  @apply relative w-full;
+}
+
+footer .news-letter input {
+  @apply w-full text-dark px-4 py-2 rounded-sm outline-primary-500 bg-light lg:flex-2/3;
+}
+
+footer .news-letter.error input {
+  @apply outline-2 -outline-offset-3 outline-error;
+}
+
+footer .news-letter span.error {
+  @apply absolute left-0 top-full hidden text-sm w-full text-error;
+}
+
+footer .news-letter.error span.error {
+  @apply inline;
+}
+
+footer .news-letter button {
+  @apply text-base m-0 rounded-sm lg:flex-1/3;
 }
